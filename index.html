@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nova Chat</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<main class="shell">
+  <header class="top"><div class="brand"><span class="logo">✦</span><div><b>Nova Chat</b><small>تواصل • شارك • أهدِ النجوم</small></div></div><div id="userBadge" class="user-badge hidden"></div></header>
+  <section id="authView" class="auth card">
+    <div class="eyebrow">مساحتك الخاصة</div><h1>كل محادثاتك، في مكان واحد.</h1><p class="muted">واجهة دردشة عصرية مع حسابات مميزة وهدايا ونجوم.</p>
+    <div class="tabs"><button class="tab active" data-tab="login">تسجيل الدخول</button><button class="tab" data-tab="register">حساب جديد</button></div>
+    <form id="authForm"><div id="displayNameWrap" class="field hidden"><label>اسم العرض</label><input id="displayName" maxlength="40" placeholder="اسمك الظاهر"></div>
+      <div class="field"><label>اسم المستخدم</label><input id="username" required minlength="3" maxlength="24" placeholder="مثال: nova_user" autocomplete="username"></div>
+      <div class="field"><label>كلمة المرور</label><input id="password" type="password" required minlength="8" placeholder="8 أحرف على الأقل" autocomplete="current-password"></div>
+      <button class="primary full" type="submit" id="authSubmit">دخول إلى حسابي <span>←</span></button><div id="authError" class="error"></div>
+    </form><p class="tiny">نسخة تجريبية: لا تستخدم كلمة مرورك الحقيقية.</p>
+  </section>
+  <section id="appView" class="layout hidden">
+    <aside class="sidebar card"><div class="side-title"><span>رسائلك</span><button id="refreshUsers" class="icon-btn" title="تحديث">↻</button></div><div id="meCard" class="me-card"></div><div class="search"><span>⌕</span><input id="searchUsers" placeholder="ابحث عن مستخدم"></div><div id="usersList" class="users-list"></div>
+      <div class="side-actions"><button id="premiumBtn" class="soft">✦ حساب مميز</button><button id="verifyBtn" class="soft">✓ طلب توثيق</button><button id="adminBtn" class="soft hidden">⚙ لوحة الأدمن</button><button id="logoutBtn" class="logout">تسجيل الخروج</button></div>
+    </aside>
+    <section class="chat card"><div id="emptyChat" class="empty"><div class="empty-icon">✧</div><h2>اختار محادثة</h2><p>ابدأ الكلام مع أي شخص من القائمة.</p></div>
+      <div id="chatRoom" class="hidden room"><div id="chatHeader" class="chat-header"></div><div id="messages" class="messages"></div><form id="messageForm" class="composer"><input id="messageInput" placeholder="اكتب رسالة..." maxlength="2000" autocomplete="off"><button class="send" type="submit">➤</button><button id="giftBtn" class="gift-action" type="button" title="إرسال هدية">🎁</button></form></div>
+    </section>
+  </section>
+  <section id="adminView" class="card admin-view hidden"><div class="admin-head"><div><div class="eyebrow">مساحة الإدارة</div><h2>لوحة الأدمن <span class="verified">✓</span></h2><p class="muted">إدارة طلبات التوثيق والنجوم والحسابات المميزة داخل Nova فقط.</p></div><button id="backBtn" class="soft">← رجوع للدردشة</button></div><div class="stats" id="stats"></div><h3>طلبات التوثيق</h3><div id="verificationList" class="admin-list"></div><h3>المستخدمون</h3><div id="adminUsers" class="admin-list"></div></section>
+  <div id="toast" class="toast"></div>
+  <footer>Nova Chat · نموذج أولي مستقل، غير تابع لواتساب أو تيليجرام.</footer>
+</main>
+<div id="modal" class="modal hidden"><div class="modal-box"><button id="closeModal" class="close">×</button><div id="modalContent"></div></div></div>
+<script src="/app.js"></script>
+</body></html>
