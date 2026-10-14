@@ -1,0 +1,8 @@
+{
+  "appId": "com.novachat.app",
+  "appName": "Nova Chat",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "https"
+  }
+}
